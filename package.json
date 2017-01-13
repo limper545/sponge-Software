@@ -10,6 +10,11 @@
     "type": "git",
     "url": "git+https://Limper97@bitbucket.org/Limper97/software.git"
   },
+  "dependencies": {
+    "angular": "1.6.1",
+    "bootstrap": "3.3.7"
+  },
+
   "author": "Sascha",
   "license": "MIT",
   "homepage": "https://bitbucket.org/Limper97/software#readme"
