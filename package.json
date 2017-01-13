@@ -1,0 +1,16 @@
+{
+  "name": "sascha",
+  "version": "1.0.0",
+  "description": "Own Software",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Limper97@bitbucket.org/Limper97/software.git"
+  },
+  "author": "Sascha",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/Limper97/software#readme"
+}
