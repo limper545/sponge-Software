@@ -56,38 +56,42 @@ db.once('open', function () {
 
 
     server.listen(port);
-    //Socket Connection for Login
-    /*io.on('connection', function (client) {
-        console.log('User connected');
-        client.on('join', function (data) {
-            console.log("Daten erhalten: ", data);
-            var user = new User({
-              benutzerName: data.email,
-              passwort: data.password
-          });
-            user.save(function (err) {
-                if (err) thr
-                if (!err) client.emit('dataOk', true)
-            });
-        });
-    });*/
 
-    //Socket Connection for Registration
+    //Socket Connection for Login
     io.on('connection', function (client) {
-        console.log('Registration started');
-        client.on('regis', function (data) {
-            console.log('Daten erhalten: ', data);
-            var user = new User({
+        console.log('Login started');
+        client.on('login', function (data) {
+            console.log("Daten erhalten: ", data);
+            User.findOne({
                 benutzerName: data.username,
-                passwort: data.passwort,
-                email: data.email,
-                name: data.name,
-                ID: uuid.v1()
-            });
-            user.save(function (err) {
-                if (err) thr
-                if (!err) client.emit('dataOk', true)
+                passwort: data.password
+            }, function (err, result) {
+                if (err) throw err;
+                if (result === null) {
+                    client.emit('dataOk', false);
+                } else if (result !== null) {
+                    client.emit('dataOk', true)
+                }
             });
         })
     });
+});
+
+//Socket Connection for Registration
+io.on('connection', function (client) {
+    console.log('Registration started');
+    client.on('regis', function (data) {
+        console.log('Daten erhalten: ', data);
+        var user = new User({
+            benutzerName: data.username,
+            passwort: data.passwort,
+            email: data.email,
+            name: data.name,
+            ID: uuid.v1()
+        });
+        user.save(function (err) {
+            if (err) thr
+            if (!err) client.emit('dataOk', true)
+        });
+    })
 });

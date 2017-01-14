@@ -10,9 +10,15 @@ angular.module('login', [])
                 $scope.data = angular.copy(user);
                 var socket = io.connect('http://localhost:8555');
                 socket.on('connect', function (data) {
-                    socket.emit('join', $scope.data);
+                    socket.emit('login', $scope.data);
                 });
-                socket.on('dataOk', function (data) {})
+                socket.on('dataOk', function (data) {
+                    if (data) {
+                        alert("Login Gut");
+                    } else if(!data){
+                        alert('Login Schlecht');
+                    }
+                })
             }
         }
     });
