@@ -11,7 +11,4 @@ var app = angular.module('software')
             .when("/registration", {
                 templateUrl: "../registration/login.html"
             })
-            .otherwise({
-                template: "Not Found"
-            });
     });

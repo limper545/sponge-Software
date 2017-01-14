@@ -8,7 +8,7 @@ var morgan = require('morgan');
 var path = require('path');
 var connect = require('connect');
 var app = express();
-var server = require('http').createServer(app);  
+var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 
@@ -65,22 +65,31 @@ db.once('open', function () {
     app.use(function (req, res) {
         res.sendfile(__dirname + '/src/index.html');
     });
-port = 8555
-    app.get('/', function(req, res,next) {  
-    res.sendFile(__dirname + '/index.html');
-});
+    port = 8555
+    app.get('/', function (req, res, next) {
+        res.sendFile(__dirname + '/index.html');
+    });
 
 
 
 
     server.listen(port);
+    //Socket Connection for Login
+    /*io.on('connection', function (client) {
+        console.log('User connected');
+        client.on('join', function (data) {
+            console.log("Daten erhalten: ", data);
+            var user = new User({
+              benutzerName: data.email,
+              passwort: data.password
+          });
+            user.save(function (err) {
+                if (err) thr
+                if (!err) client.emit('dataOk', true)
+            });
+        });
+    });*/
 
-    io.on('connection', function(client) {  
-    console.log('Started from the bottom started....');
-    client.on('join', function(data) {
-        console.log("Daten erhalten: ", data);
-    });
-    client.emit('dataOk', "Daten wurden gepsiechert")
+    //Socket Connection for Registration
 
-});
 });

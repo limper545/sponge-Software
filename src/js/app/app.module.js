@@ -7,5 +7,6 @@ angular.module('software', [
 
     //internal
     'navbar',
-    'login'
+    'login',
+    'regis'
     ]);

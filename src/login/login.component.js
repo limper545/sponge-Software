@@ -12,9 +12,7 @@ angular.module('login', [])
                 socket.on('connect', function (data) {
                     socket.emit('join', $scope.data);
                 });
-                socket.on('dataOk', function(data){
-                    console.log(data);
-                })
+                socket.on('dataOk', function (data) {})
             }
         }
     });
