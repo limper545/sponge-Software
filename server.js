@@ -31,8 +31,7 @@ var userSchema = mongoose.Schema({
     benutzerName: String,
     passwort: String,
     email: String,
-    vorName: String,
-    nachName: String,
+    name: String,
     ID: String
 });
 
@@ -44,23 +43,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log("Connected to DB");
 
-
-    /*  app.get('/post', function (req, res) {
-          console.log("Post Befehl ausgeführt");
-          var user = new User({
-              benutzerName: "String",
-              passwort: "String",
-              email: "String",
-              vorName: "String",
-              nachName: "String",
-              ID: "String"
-          });
-
-          user.save(function (err) {
-              if (err) thr
-
-          })
-      });*/
     /**  Wird benötigt, damit die Seite erneut geladen wird */
     app.use(function (req, res) {
         res.sendfile(__dirname + '/src/index.html');
@@ -91,5 +73,21 @@ db.once('open', function () {
     });*/
 
     //Socket Connection for Registration
-
+    io.on('connection', function (client) {
+        console.log('Registration started');
+        client.on('regis', function (data) {
+            console.log('Daten erhalten: ', data);
+            var user = new User({
+                benutzerName: data.username,
+                passwort: data.passwort,
+                email: data.email,
+                name: data.name,
+                ID: uuid.v1()
+            });
+            user.save(function (err) {
+                if (err) thr
+                if (!err) client.emit('dataOk', true)
+            });
+        })
+    });
 });

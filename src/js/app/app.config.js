@@ -9,6 +9,6 @@ var app = angular.module('software')
                 template: "<login><login>"
             })
             .when("/registration", {
-                templateUrl: "../registration/login.html"
+                template: "<regis><regis>"
             })
     });
