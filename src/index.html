@@ -11,41 +11,16 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/app/app.module.js" > </script>
+    <script src="./navBarTop/navbar.module.js" > </script>
+    <script src="./navBarTop/navbar.component.js" > </script>
+
+
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">SpongeBozz</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Module
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">E-Mail</a></li>
-                        <li><a href="#">Upload</a></li>
-                        <li><a href="#">Datenbank</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Sign In</a></li>
-                <li>
-                    <a href="#">Sign Up</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <h1>
-        Hello, {{ name }}!
-    </h1>
-    <input type="text" ng-model="name">
-    <script src="./js/app/app.module.js"></script>
-    <script src="./js/app/app.config.js"></script>
+   <navbar></navbar>
 </body>
 
 </html>
