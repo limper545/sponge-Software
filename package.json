@@ -11,14 +11,21 @@
     "url": "git+https://Limper97@bitbucket.org/Limper97/software.git"
   },
   "dependencies": {
-    "angular": "1.6.1",
+    "angular": "1.5.1",
+    "angular-route": "1.5.1",
+    "angular-resource": "1.5.1",
     "bootstrap": "3.3.7",
     "express": "4.14.0",
     "body-parser": "1.15.2",
     "cookie-parser": "1.4.3",
     "multer": "1.2.1",
     "jquery": "3.1.1",
-    "font-awesome": "4.7.0"
+    "font-awesome": "4.7.0",
+    "mongoose": "4.7.6",
+    "request": "2.79.0",
+    "node-uuid": "1.4.7",
+    "morgan": "1.7.0",
+    "routes": "2.1.0"
   },
 
   "author": "Sascha",

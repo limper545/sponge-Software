@@ -1,0 +1,17 @@
+var app = angular.module('software')
+
+    .config(function ($locationProvider, $routeProvider) {
+        $locationProvider.html5Mode({
+            enabled: true
+        });
+        $routeProvider
+            .when("/login", {
+                template: "<login><login>"
+            })
+            .when("/registration", {
+                templateUrl: "../registration/login.html"
+            })
+            .otherwise({
+                template: "Not Found"
+            });
+    });
