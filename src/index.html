@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
-    <base href="/"> 
+    <base href="/index.html">
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compitable" content="IE=edge">
@@ -14,23 +14,22 @@
     <script src="/node_modules/angular-route/angular-route.js"></script>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-       
-    
 </head>
 
 <body ng-app="software">
-    <navbar></navbar>
+       <navbar></navbar>
     <div ng-view>
     </div>
     <script src="/js/app/app.module.js"></script>
     <script src="/js/app/app.config.js"></script>
     <script src="/navBarTop/navbar.module.js"></script>
     <script src="/navBarTop/navbar.component.js"></script>
-    
     <script src="/login/login.module.js"></script>
     <script src="/login/login.component.js"></script>
+  
 </body>
 
 </html>

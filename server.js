@@ -2,11 +2,16 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request')
 var uuid = require('node-uuid');
+var http = require('http');
 var mongoose = require('mongoose');
 var morgan = require('morgan');
 var path = require('path');
-
+var connect = require('connect');
 var app = express();
+var server = require('http').createServer(app);  
+var io = require('socket.io')(server);
+
+
 
 app.use(express.static('src'));
 app.use(bodyParser.urlencoded({
@@ -15,6 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
+
 
 
 //Datenbank Verbindung
@@ -55,29 +61,26 @@ db.once('open', function () {
 
           })
       });*/
-
-      app.get('/post', function(req, res) {
-          console.log("POST befehl wurde erfolgereich ausgeführt1");
-      })
-
-      app.post('/post', function(req, res) {
-          console.log("POST befehl wurde erfolgereich ausgeführt2");
-      })
-
-      app.get('/', function(req, res) {
-          console.log("POST befehl wurde erfolgereich ausgeführt3");
-      })
-
-      app.post('/', function(req, res) {
-          console.log("POST befehl wurde erfolgereich ausgeführt4");
-      })
-
-
-
-    var server = app.listen(8555, function () {
-        var host = server.address().address
-        var port = server.address().port
-
-        console.log('Listening at htpp://%s:%s', host, port);
+    /**  Wird benötigt, damit die Seite erneut geladen wird */
+    app.use(function (req, res) {
+        res.sendfile(__dirname + '/src/index.html');
     });
+port = 8555
+    app.get('/', function(req, res,next) {  
+    res.sendFile(__dirname + '/index.html');
+});
+
+
+
+
+    server.listen(port);
+
+    io.on('connection', function(client) {  
+    console.log('Started from the bottom started....');
+    client.on('join', function(data) {
+        console.log("Daten erhalten: ", data);
+    });
+    client.emit('dataOk', "Daten wurden gepsiechert")
+
+});
 });
