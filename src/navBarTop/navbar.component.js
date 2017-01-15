@@ -24,7 +24,6 @@ angular.module('navbar', [])
             
             $scope.time = new Date();
 
-            console.log($scope.time.getHours() + ":" + $scope.time.getMinutes() + ":" + $scope.time.getSeconds());
             $scope.fullTime = $scope.time.getHours() + ":" + $scope.time.getMinutes();
 
             if($scope.cookieLogin === 'true'){

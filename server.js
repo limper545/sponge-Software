@@ -32,7 +32,8 @@ var userSchema = mongoose.Schema({
     passwort: String,
     email: String,
     name: String,
-    ID: String
+    ID: String,
+    mitgliedSince: String
 });
 
 var User = mongoose.model('User', userSchema, 'User');
@@ -77,6 +78,7 @@ db.once('open', function () {
     });
 });
 
+
 //Socket Connection for Registration
 io.on('connection', function (client) {
     console.log('Registration started');
@@ -87,7 +89,8 @@ io.on('connection', function (client) {
             passwort: data.passwort,
             email: data.email,
             name: data.name,
-            ID: uuid.v1()
+            ID: uuid.v1(),
+            mitgliedSince: new Date()
         });
         user.save(function (err) {
             if (err) thr
@@ -95,3 +98,22 @@ io.on('connection', function (client) {
         });
     })
 });
+
+
+//Socket Connection For Profil Data
+io.on('connection', function (client) {
+    console.log("Profil aufruf");
+    client.on('profil', function (data) {
+        console.log("Daten erhalten: ", data);
+        User.findOne({
+            benutzerName: data,
+        }, function (err, result) {
+            if (err) throw err;
+            if (result === null) {
+                client.emit('dataOk', false);
+            } else if (result !== null) {
+                client.emit('dataOk', result)
+            }
+        });
+    })
+})

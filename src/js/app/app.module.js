@@ -8,5 +8,6 @@ angular.module('software', [
     //internal
     'navbar',
     'login',
-    'regis'
+    'regis',
+    'profil'
     ]);

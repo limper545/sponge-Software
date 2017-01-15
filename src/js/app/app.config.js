@@ -11,4 +11,7 @@ var app = angular.module('software')
             .when("/registration", {
                 template: "<regis><regis>"
             })
+            .when('/profil', {
+                template: "<profil></profil>"
+            })
     });
