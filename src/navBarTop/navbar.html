@@ -1,25 +1,33 @@
- <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">SpongeBozz</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
-                <li class="dropdown">
-                    <a ng-hide="!login" class="dropdown-toggle" data-toggle="dropdown" href="#">Module
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href='#post'>E-Mail</a></li>
-                        <li><a href="#">Upload</a></li>
-                        <li><a href="#">Datenbank</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a ng-hide="login" href="/login">Sign In</a></li>
-                <li>
-                    <a ng-hide="login" href="/registration">Sign Up</a>
-                </li>
-            </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SpongeBozz</a>
         </div>
-    </nav>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a ng-hide="!login" class="dropdown-toggle" data-toggle="dropdown" href="#">Module
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href='#post'>E-Mail</a></li>
+                    <li><a href="#">Upload</a></li>
+                    <li><a href="#">Datenbank</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a ng-hide="login" href="/login">Sign In</a>
+            </li>
+            <li>
+                <a ng-hide="login" href="/registration">Sign Up</a>
+            </li>
+            <li>
+                <a ng-show="login" id="nameNav" href="">Hallo   <span class="nameNavbar"> {{cookieName}} </span> </a>
+            </li>
+            <li>
+                <a span  ng-show="login" id="timeNav" href="">{{ fullTime }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

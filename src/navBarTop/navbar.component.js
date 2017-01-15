@@ -19,9 +19,15 @@ angular.module('navbar', [])
                 }
                 return "";
             }
-            var cookieName = getCookie("login");
+            $scope.cookieLogin = getCookie("login");
+            $scope.cookieName = getCookie("username");
+            
+            $scope.time = new Date();
 
-            if(cookieName === 'true'){
+            console.log($scope.time.getHours() + ":" + $scope.time.getMinutes() + ":" + $scope.time.getSeconds());
+            $scope.fullTime = $scope.time.getHours() + ":" + $scope.time.getMinutes();
+
+            if($scope.cookieLogin === 'true'){
                 $scope.login = true;
             }
         }

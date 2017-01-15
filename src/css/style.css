@@ -305,3 +305,9 @@ span.input-group-addon i {
     border-color: #6b5151!important;
     border-radius: 2px!important;
 }
+
+.nameNavbar {
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
