@@ -4,6 +4,7 @@ angular.module('software', [
     //external
     'ngResource',
     'ngRoute',
+    'angularSpinner',
 
     //internal
     'navbar',

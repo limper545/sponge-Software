@@ -4,6 +4,21 @@ angular.module('profil', [])
     .component('profil', {
         templateUrl: './profil/profil.html',
         controller: function ($scope, $timeout) {
+
+            $scope.spinnerConf  = {
+                lines: 13,
+                length: 20,
+                width:9,
+                radius: 35,
+                scale: 1.00,
+                corners: 1.0,
+                opacity: 0.05,
+                rotate: 48,
+                speed: 1.1,
+                trial: 100,
+                shadow: true
+            }
+
             $scope.loading = false;
             var socket = io.connect('http://localhost:8555');
             $scope.socketData;
@@ -57,9 +72,9 @@ angular.module('profil', [])
                         $scope.name = data.name;
                         $scope.loading = true;
                          $scope.mitglied = data.mitgliedSince;
-                    }, 800)
+                    }, 1000)
             })
-
+    
 
         }
     });
