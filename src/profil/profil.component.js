@@ -20,7 +20,7 @@ angular.module('profil', [])
             }
 
             $scope.loading = false;
-            var socket = io.connect('http://192.168.192.44:3000');
+            var socket = io.connect('http://192.168.192.44:4000');
             $scope.socketData;
             $scope.postMessage = function (message) {};
             $scope.tests = [];
