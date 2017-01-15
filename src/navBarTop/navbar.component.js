@@ -15,7 +15,7 @@ angular.module('navbar', [])
                 $scope.wrongPW = false;
                 console.log("USERDATA: ", user);
                 $scope.data = angular.copy(user);
-                var socket = io.connect('http://localhost:8555');
+                var socket = io.connect('http://192.168.192.44:4000');
                 socket.on('connect', function (data) {
                     socket.emit('login', $scope.data);
                 });
@@ -80,7 +80,8 @@ angular.module('navbar', [])
 
             $scope.logout = function () {
                 document.cookie = "login=; username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                $window.location.href = '/login';
+                $scope.loginTry = false;
+                $window.location = "/";
             }
 
 

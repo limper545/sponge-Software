@@ -8,7 +8,7 @@ angular.module('regis', [])
             $scope.registration = regi => {
                 $scope.data = angular.copy(regi);
                 if ($scope.data.passwort === $scope.data.passwortConfirm) {
-                    var socket = io.connect('http://localhost:8555');
+                    var socket = io.connect('http://192.168.192.44:4000');
                     socket.on('connect', function (data) {
                         socket.emit('regis', $scope.data);
                     });

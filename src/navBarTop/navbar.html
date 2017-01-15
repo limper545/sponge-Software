@@ -1,46 +1,3 @@
-<!--<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">SpongeBozz</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#home">Home</a></li>
-            <li class="dropdown">
-                <a ng-hide="!login" class="dropdown-toggle" data-toggle="dropdown" href="#">Module
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href='#post'>E-Mail</a></li>
-                    <li><a href="#">Upload</a></li>
-                    <li><a href="#">Datenbank</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a ng-hide="login" href="/login">Sign In</a>
-            </li>
-            <li>
-                <a ng-hide="login" href="/registration">Sign Up</a>
-            </li>
-            <li>
-                <a ng-show="login" id="nameNav" href="">Hallo:   <span class="nameNavbar"> {{cookieName}} </span> </a>
-            </li>
-            <li>
-                <a span ng-show="login" id="timeNav" href="">{{ fullTime }}</a>
-            </li>
-            <li class="dropdown">
-                <a ng-show="login" class="dropdown-toggle" data-toggle="dropdown" id="nameNav" href="#">Settings <i style="color: black;font-size: 14px;" class="fa fa-cog" aria-hidden="true"></i> 
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href='#'>Settings</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="/profil">Profil</a></li>
-                    <li><a href="#" ng-click="logout()">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>-->
 <nav class="navbar navbar-default itemHeight" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -50,12 +7,12 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-        <a class="navbar-brand" href="http://www.jquery2dotnet.com">SpongeBozz</a>
+        <a class="navbar-brand" href="#"><img style="margin-top: -13px;" src="../css/pics/sponge.png"></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="http://www.jquery2dotnet.com">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li class="dropdown">
                 <a ng-hide="!loginTry"  class="dropdown-toggle" data-toggle="dropdown" href="#">Module
                     <span class="caret"></span></a>
@@ -75,7 +32,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a  ng-show="!loginTry" href="/registration">Sign Up</a></li>
             <li class="dropdown">
-                <a ng-show="!loginTry" href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <a ng-show="!loginTry" href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                     <li>
                         <div class="row">
@@ -109,9 +66,24 @@
                         <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
                     </li>
                 </ul>
+                 <li>
+                <a ng-show="loginTry" id="nameNav" href="">Hallo:   <span class="nameNavbar"> {{cookieName}} </span> </a>
+            </li>
+            <li>
+                <a span ng-show="loginTry" id="timeNav" href="">{{ fullTime }}</a>
+            </li>
+            <li class="dropdown">
+                <a ng-show="loginTry" class="dropdown-toggle" data-toggle="dropdown" id="nameNav" href="#">Settings <i style="color: black;font-size: 14px;" class="fa fa-cog" aria-hidden="true"></i> 
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href='#'>Settings</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="#" ng-click="logout()">Logout</a></li>
+                </ul>
+            </li>
             </li>
         </ul>
     </div>
     <!-- /.navbar-collapse -->
 </nav>
-<a href="" ng-click="logout()">logout</a>

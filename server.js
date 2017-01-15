@@ -48,7 +48,7 @@ db.once('open', function () {
     app.use(function (req, res) {
         res.sendfile(__dirname + '/src/index.html');
     });
-    port = 8555
+    port = 4000
     app.get('/', function (req, res, next) {
         res.sendFile(__dirname + '/index.html');
     });

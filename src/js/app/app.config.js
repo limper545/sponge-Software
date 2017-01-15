@@ -5,9 +5,6 @@ var app = angular.module('software')
             enabled: true
         });
         $routeProvider
-            .when("/login", {
-                template: "<login></login>"
-            })
             .when("/registration", {
                 template: "<regis></regis>"
             })
