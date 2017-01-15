@@ -3,7 +3,7 @@
 angular.module('login', [])
     .component('login', {
         templateUrl: 'login/login.html',
-        controller: function ($scope, $rootScope) {
+        controller: function ($scope, $rootScope, $window) {
             $scope.data = {}
             $scope.login = user => {
                 $scope.data = angular.copy(user);
@@ -15,7 +15,7 @@ angular.module('login', [])
                     if (data) {
                         document.cookie = "username=" + data.username;
                         document.cookie = "login=true";
-                        window.location = "/";
+                        $window.location.href = '/';
                     }
                 })
             }

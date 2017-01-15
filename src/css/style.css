@@ -1,7 +1,9 @@
 /*************************     Login-CSS     ****************/
 
 body {
-    background-color: #2B2B2B;
+    background: #afd246;
+    background-image: url("./pics/zenbg-1.png"), url("./pics/zenbg-2.png");
+    background-repeat: repeat-x, repeat;
 }
 
 * {
@@ -298,12 +300,6 @@ span.input-group-addon i {
 
 
 /*********************** OWN CSS CODE  ***************************/
-
-body {
-    background: #F3904F;
-    background: -webkit-linear-gradient(to left, #F3904F, #3B4371);
-    background: linear-gradient(to left, #F3904F, #3B4371);
-}
 
 .navbar-default {
     border-color: #6b5151!important;

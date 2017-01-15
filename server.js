@@ -13,7 +13,7 @@ var io = require('socket.io')(server);
 
 
 
-app.use(express.static('src'));
+app.use(express.static(__dirname + '/src'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
