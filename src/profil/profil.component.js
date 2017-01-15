@@ -5,10 +5,10 @@ angular.module('profil', [])
         templateUrl: './profil/profil.html',
         controller: function ($scope, $timeout) {
 
-            $scope.spinnerConf  = {
+            $scope.spinnerConf = {
                 lines: 13,
                 length: 20,
-                width:9,
+                width: 9,
                 radius: 35,
                 scale: 1.00,
                 corners: 1.0,
@@ -44,20 +44,6 @@ angular.module('profil', [])
             $scope.cookieLogin = getCookie("login");
             $scope.cookieName = getCookie("username");
 
-            var getFullDate = date => {
-                var weekday = new Array(7);
-                weekday[0] = "Sunday";
-                weekday[1] = "Monday";
-                weekday[2] = "Tuesday";
-                weekday[3] = "Wednesday";
-                weekday[4] = "Thursday";
-                weekday[5] = "Friday";
-                weekday[6] = "Saturday";
-                var n = weekday[date.getDay()];
-                console.log(n);
-                return n;
-            }
-
             socket.on('connect', function (data) {
                 console.log($scope.id2);
                 socket.emit('profil', $scope.cookieName);
@@ -71,10 +57,10 @@ angular.module('profil', [])
                         $scope.email = data.email;
                         $scope.name = data.name;
                         $scope.loading = true;
-                         $scope.mitglied = data.mitgliedSince;
+                        $scope.mitglied = data.mitgliedSince;
                     }, 1000)
             })
-    
+
 
         }
     });

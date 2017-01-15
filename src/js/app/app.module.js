@@ -10,4 +10,7 @@ angular.module('software', [
     'navbar',
     'regis',
     'profil',
+    'home',
+    'sidebar',
+    'footer2'
     ]);
