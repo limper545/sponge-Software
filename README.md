@@ -11,5 +11,7 @@ Die Software ermöglicht es dem Benutzer:
   -Eigenes Chat-System
 
 TODO:
+<br>
   -Home-Fenster gestalten und mit Funktionen ausstatten.
+<br>
   -Sobald ein User eingeloggt ist, eine aktive Verbindung mit dem Server herstellen für zukunftige Funktionen.
