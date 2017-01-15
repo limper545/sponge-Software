@@ -6,10 +6,10 @@ var app = angular.module('software')
         });
         $routeProvider
             .when("/login", {
-                template: "<login><login>"
+                template: "<login></login>"
             })
             .when("/registration", {
-                template: "<regis><regis>"
+                template: "<regis></regis>"
             })
             .when('/profil', {
                 template: "<profil></profil>"

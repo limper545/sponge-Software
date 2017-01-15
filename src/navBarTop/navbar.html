@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<!--<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">SpongeBozz</a>
@@ -35,9 +35,83 @@
                     <li><a href='#'>Settings</a></li>
                     <li><a href="#">Help</a></li>
                     <li><a href="/profil">Profil</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="#" ng-click="logout()">Logout</a></li>
                 </ul>
             </li>
         </ul>
     </div>
+</nav>-->
+<nav class="navbar navbar-default itemHeight" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+        <a class="navbar-brand" href="http://www.jquery2dotnet.com">SpongeBozz</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.jquery2dotnet.com">Home</a></li>
+            <li class="dropdown">
+                <a ng-hide="!loginTry"  class="dropdown-toggle" data-toggle="dropdown" href="#">Module
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href='#post'>E-Mail</a></li>
+                    <li><a href="#">Upload</a></li>
+                    <li><a href="#">Datenbank</a></li>
+                </ul>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" id="searchField" class="form-control" placeholder="Search">
+            </div>
+            <button id="searchBtn" type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a  ng-show="!loginTry" href="/registration">Sign Up</a></li>
+            <li class="dropdown">
+                <a ng-show="!loginTry" href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form name="userForm" ng-submit="submitForm(userForm.$valid)">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputEmail2">Username </label>
+                                        <input type="text" class="form-control" id="exampleInputEmail2" ng-model="user.username" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2" ng-model="user.password" placeholder="Password" required>
+                                    </div>
+                                    <div ng-show="loading" style="padding-bottom: 7px;" us-spinner="spinnerConf"></div>
+                                    <div ng-show="wrongPW" style="color:red">Wrong Password or Username</div>
+                                    <div class="checkbox">
+                                        <label>
+                                       <input type="checkbox"> Remember me
+                                       </label>
+                                    </div>
+                                    <div class="">
+                                        <input  type="submit" ng-disabled="userForm.$invalid" ng-click="login(user)" class="btn btn-success btn-block">Sign in</input>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                        <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
 </nav>
+<a href="" ng-click="logout()">logout</a>

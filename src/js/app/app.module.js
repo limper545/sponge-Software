@@ -10,5 +10,5 @@ angular.module('software', [
     'navbar',
     'login',
     'regis',
-    'profil'
+    'profil',
     ]);

@@ -298,7 +298,9 @@ span.input-group-addon i {
     text-align: center;
 }
 
+
 /*********************** Profil CSS CODE *************************/
+
 .user-row {
     margin-bottom: 14px;
 }
@@ -317,32 +319,40 @@ span.input-group-addon i {
     cursor: pointer;
 }
 
-.table-user-information > tbody > tr {
-    border-top: 1px solid rgb(255,255,255);
+.table-user-information>tbody>tr {
+    border-top: 1px solid rgb(255, 255, 255);
 }
 
-.table-user-information > tbody > tr:first-child {
+.table-user-information>tbody>tr:first-child {
     border-top: 0;
 }
 
-
-.table-user-information > tbody > tr > td {
+.table-user-information>tbody>tr>td {
     border-top: 0;
 }
-.toppad
-{margin-top:20px;
+
+.toppad {
+    margin-top: 20px;
+}
+
+
+/********************** NavBar CSS CODE ***************************/
+
+#login-nav input {
+    margin-bottom: 15px;
 }
 
 
 /*********************** OWN CSS CODE  ***************************/
 
-.navbar-default {
-    border-color: #6b5151!important;
-    border-radius: 2px!important;
-}
-
-.nameNavbar {
-    color: black;
-    font-weight: bold;
-    font-size: 17px;
+@media (min-width: 767px) {
+    .navbar-default {
+        height: 52px;
+    }
+    #searchBtn {
+        margin-top: -13px;
+    }
+    #searchField {
+        margin-top: -2px;
+    }
 }
