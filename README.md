@@ -9,3 +9,7 @@ Die Software ermöglicht es dem Benutzer:
   -Verwaltung der Daten in der Datenbank
 <br>
   -Eigenes Chat-System
+
+TODO:
+  -Home-Fenster gestalten und mit Funktionen ausstatten.
+  -Sobald ein User eingeloggt ist, eine aktive Verbindung mit dem Server herstellen für zukunftige Funktionen.
