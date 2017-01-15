@@ -70,7 +70,7 @@ db.once('open', function () {
                 if (result === null) {
                     client.emit('dataOk', false);
                 } else if (result !== null) {
-                    client.emit('dataOk', true)
+                    client.emit('dataOk', data)
                 }
             });
         })

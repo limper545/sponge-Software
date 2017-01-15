@@ -3,8 +3,7 @@
 angular.module('login', [])
     .component('login', {
         templateUrl: 'login/login.html',
-        controller: function ($scope, $http, $rootScope) {
-
+        controller: function ($scope, $rootScope) {
             $scope.data = {}
             $scope.login = user => {
                 $scope.data = angular.copy(user);
@@ -14,9 +13,9 @@ angular.module('login', [])
                 });
                 socket.on('dataOk', function (data) {
                     if (data) {
-                        alert("Login Gut");
-                    } else if(!data){
-                        alert('Login Schlecht');
+                        document.cookie = "username=" + data.username;
+                        document.cookie = "login=true";
+                        window.location = "/";
                     }
                 })
             }
