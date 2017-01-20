@@ -15,7 +15,7 @@ Sprint 1-2201:
 <br>
   -Cookie durch einen Session-Cookie ersetzen
 <br>
-  -API Einfügen (eventuell uib)
+  <s>-API Einfügen (eventuell uib)</s>
   <br>
   <s>-Socket Verbindung in eine Factory und variable machen.</s>
   <br>
