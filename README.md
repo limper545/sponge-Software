@@ -13,7 +13,7 @@ Die Software ermöglicht es dem Benutzer:
 TODO:
 Sprint 1-2201:
 <br>
-  -Cookie durch einen Session-Cookie ersetzen
+  <s>-Cookie durch einen Session-Cookie ersetzen</s>
 <br>
   <s>-API Einfügen (eventuell uib)</s>
   <br>
