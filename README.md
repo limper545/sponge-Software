@@ -19,7 +19,7 @@ Sprint 1-2201:
   <br>
   <s>-Socket Verbindung in eine Factory und variable machen.</s>
   <br>
-  -URL Sperren
+  <s>-URL Sperren</s>
 <br>
   -Home-Fenster gestalten und mit Funktionen ausstatten.
 <br>
