@@ -17,7 +17,7 @@ Sprint 1-2201:
 <br>
   -API Einfügen (eventuell uib)
   <br>
-  -Socket Verbindung in eine Factory und variable machen.
+  <s>-Socket Verbindung in eine Factory und variable machen.</s>
   <br>
   -URL Sperren
 <br>
