@@ -3,7 +3,7 @@
 angular.module('profil', [])
     .component('profil', {
         templateUrl: './profil/profil.html',
-        controller: function ($scope, $timeout) {
+        controller: function (socket, $scope, $timeout) {
 
             $scope.spinnerConf = {
                 lines: 13,
@@ -20,7 +20,6 @@ angular.module('profil', [])
             }
 
             $scope.loading = false;
-            var socket = io.connect('http://192.168.192.44:4000');
             $scope.socketData;
             $scope.postMessage = function (message) {};
             $scope.tests = [];
@@ -46,8 +45,9 @@ angular.module('profil', [])
 
             socket.on('connect', function (data) {
                 console.log($scope.id2);
-                socket.emit('profil', $scope.cookieName);
+                
             });
+            socket.emit('profil', $scope.cookieName);
             socket.on('dataOk', function (data) {
                 console.log(data);
                 $timeout(

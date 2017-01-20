@@ -645,3 +645,7 @@ body {
         margin-top: -2px;
     }
 }
+
+.dropdown-menu a{
+    color: black!important;
+}

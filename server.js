@@ -16,7 +16,9 @@ var io = require('socket.io')(server);
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/public'));
@@ -57,30 +59,34 @@ db.once('open', function () {
 
 
     server.listen(port);
-
-    //Socket Connection for Login
-    io.on('connection', function (client) {
-        console.log('Login started');
-        client.on('login', function (data) {
-            console.log("Daten erhalten: ", data);
-            User.findOne({
-                benutzerName: data.username,
-                passwort: data.password
-            }, function (err, result) {
-                if (err) throw err;
-                if (result === null) {
-                    client.emit('dataOk', false);
-                } else if (result !== null) {
-                    client.emit('dataOk', data)
-                }
-            });
-        })
-    });
 });
-
-
-//Socket Connection for Registration
+//Socket Connection for Login
 io.on('connection', function (client) {
+    console.log('Login started');
+    client.on('login', function (data) {
+        console.log("Daten erhalten: ", data);
+        User.findOne({
+            benutzerName: data.username,
+            passwort: data.password
+        }, function (err, result) {
+
+            if (err) throw err;
+            if (result === null) {
+                client.emit('dataOk', false);
+                console.log("Komme hier her1");
+            } else if (result !== null) {
+                client.emit('dataOk', data)
+                console.log("Komme hier her2");
+            }
+
+        });
+    })
+
+
+
+
+    //Socket Connection for Registration
+
     console.log('Registration started');
     client.on('regis', function (data) {
         console.log('Daten erhalten: ', data);
@@ -97,11 +103,9 @@ io.on('connection', function (client) {
             if (!err) client.emit('dataOk', true)
         });
     })
-});
 
 
-//Socket Connection For Profil Data
-io.on('connection', function (client) {
+    //Socket Connection For Profil Data
     console.log("Profil aufruf");
     client.on('profil', function (data) {
         console.log("Daten erhalten: ", data);
@@ -115,5 +119,5 @@ io.on('connection', function (client) {
                 client.emit('dataOk', result)
             }
         });
-    })
-})
+    });
+});

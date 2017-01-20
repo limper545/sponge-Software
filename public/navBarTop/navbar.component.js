@@ -3,10 +3,10 @@
 angular.module('navbar', [])
     .component('navbar', {
         templateUrl: './navBarTop/navbar.html',
-        controller: function ($scope, $window, $timeout, $route) {
+        controller: function (socket, $scope, $window, $timeout, $route) {
 
             $scope.loading = false;
-
+                
 
             $scope.data = {}
             $scope.login = user => {
@@ -15,12 +15,12 @@ angular.module('navbar', [])
                 $scope.wrongPW = false;
                 console.log("USERDATA: ", user);
                 $scope.data = angular.copy(user);
-                var socket = io.connect('http://192.168.192.44:4000');
                 socket.on('connect', function (data) {
-                    socket.emit('login', $scope.data);
+                    
                 });
+                socket.emit('login', $scope.data);
                 socket.on('dataOk', function (data) {
-
+                    console.log("data", data);
                     $timeout(function () {
                         if (data) {
                             document.cookie = "username=" + data.username;
