@@ -14,4 +14,7 @@ var app = angular.module('software')
             .when('/profil/:name', {
                 template: "<profil></profil>"
             })
+            .when('/email', {
+                template: "<email></email>"
+            })
     });

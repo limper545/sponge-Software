@@ -4,7 +4,7 @@ angular.module('regis', [])
     .component('regis', {
         templateUrl: 'registration/regi.html',
         controller: function (socket, $scope, $http, $rootScope) {
-
+            console.log("2", document.cookie);
             $scope.registration = regi => {
                 $scope.data = angular.copy(regi);
                 if ($scope.data.passwort === $scope.data.passwortConfirm) {
@@ -23,6 +23,5 @@ angular.module('regis', [])
                     console.log("Passwort falsch");
                 }
             }
-
         }
     });

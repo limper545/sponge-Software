@@ -12,5 +12,6 @@ angular.module('software', [
     'profil',
     'home',
     'sidebar',
-    'footer2'
+    'footer2',
+    'email'
     ]);

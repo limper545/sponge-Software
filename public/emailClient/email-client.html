@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-1"> </div>
+        <div class="mailLinks">
+            <button class="btn btn-primary btnComp">COMPOSE</button>
+            <div ng-repeat="test in tableLeftData">
+                {{test}}
+            </div>
+        </div>
+        <div class="mailBody">
+        </div>
+    </div>
+</div>
+<style>
+    .mailLinks {
+        float: left;
+        position: relative;
+        height: 700px;
+        -webkit-transition: width .5s;
+        transition: width .5s;
+        color: #fff;
+        width: 200px;
+        overflow: hidden;
+        padding: 0;
+        background: url(../css/pics/blur-bg-blurred.jpg) fixed;
+        opacity: 0.8;
+        text-align: center;
+    }
+    
+    .mailBody {
+        float: left;
+        padding: 0 15px;
+        position: relative;
+        height: 700px;
+        -webkit-transition: width .5s;
+        transition: width .5s;
+        width: calc(100% - 380px);
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 1px solid rgba(0, 0, 0, .12);
+        box-shadow: -1px 0 0 0 rgba(255, 255, 255, .12);
+        background: url(../css/pics/blur-bg-blurred.jpg) fixed;
+        opacity: 0.8;
+    }
+    
+    .btnComp {
+        width: 140px;
+        font-weight: 300;
+        border: 2px solid #fff;
+        background-color: transparent;
+        margin: 15px 0;
+    }
+    
+    .btnComp:active {
+        width: 140px;
+        font-weight: 300;
+        border: 2px solid #fff;
+        background-color: transparent!important;
+        margin: 15px 0;
+    }
+    
+    .btnComp:focus {
+        width: 140px;
+        font-weight: 300;
+        border: 2px solid #fff;
+        background-color: transparent;
+        margin: 15px 0;
+    }
+    
+    .btnComp:hover {
+        width: 140px;
+        font-weight: 300;
+        border: 2px solid #fff;
+        background-color: transparent;
+        margin: 15px 0;
+    }
+</style>

@@ -45,7 +45,7 @@ angular.module('profil', [])
 
             socket.on('connect', function (data) {
                 console.log($scope.id2);
-                
+
             });
             socket.emit('profil', $scope.cookieName);
             socket.on('dataOk', function (data) {
@@ -60,7 +60,5 @@ angular.module('profil', [])
                         $scope.mitglied = data.mitgliedSince;
                     }, 1000)
             })
-
-
         }
     });

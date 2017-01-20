@@ -20,22 +20,17 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    
 </head>
 
 <body ng-app="software">
     <navbar></navbar>
-
-    <div ng-view>
-    </div>
-
     <sidebar></sidebar>
+    <div ng-view style="margin-left: 160px; padding-top: 80px;">
+    </div>
     <footer2></footer2>
-
     <script src="/js/app/app.module.js"></script>
     <script src="/js/app/app.config.js"></script>
     <script src="/navBarTop/navbar.module.js"></script>
@@ -51,7 +46,8 @@
     <script src="/footer/footer.module.js"></script>
     <script src="/footer/footer.component.js"></script>
     <script src="/service/socket.factory.js"></script>
-
+    <script src="/emailClient/email-client.module.js"></script>
+    <script src="/emailClient/email-client.component.js"></script>
 </body>
 
 </html>
