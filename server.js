@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var request = require('request')
 var uuid = require('node-uuid');
 var http = require('http');
@@ -13,13 +14,12 @@ var io = require('socket.io')(server);
 
 
 
-app.use(express.static(__dirname + '/src'));
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use(express.static(__dirname + '/public'));
 
 
 
@@ -46,7 +46,7 @@ db.once('open', function () {
 
     /**  Wird benötigt, damit die Seite erneut geladen wird */
     app.use(function (req, res) {
-        res.sendfile(__dirname + '/src/index.html');
+        res.sendfile(__dirname + '/public/index.html');
     });
     port = 4000
     app.get('/', function (req, res, next) {

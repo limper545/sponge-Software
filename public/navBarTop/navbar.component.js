@@ -76,12 +76,12 @@ angular.module('navbar', [])
 
 
 
-            /** Cookue Parser Logic End*/
+            /** Cookie Parser Logic End*/
 
             $scope.logout = function () {
                 document.cookie = "login=; username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 $scope.loginTry = false;
-                $window.location = "/";
+                $window.location.reload()
             }
 
 
