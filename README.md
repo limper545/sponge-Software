@@ -13,13 +13,13 @@ Die Software ermöglicht es dem Benutzer:
 TODO:
 Sprint 1-2201:
 <br>
-  -Cookie durch einen Session-Cookie ersetzen
+  <s>-Cookie durch einen Session-Cookie ersetzen</s>
 <br>
-  -API Einfügen (eventuell uib)
+  <s>-API Einfügen (eventuell uib)</s>
   <br>
   <s>-Socket Verbindung in eine Factory und variable machen.</s>
   <br>
-  -URL Sperren
+  <s>-URL Sperren</s>
 <br>
   -Home-Fenster gestalten und mit Funktionen ausstatten.
 <br>
