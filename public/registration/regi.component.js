@@ -9,12 +9,13 @@ angular.module('regis', [])
                 $scope.data = angular.copy(regi);
                 if ($scope.data.passwort === $scope.data.passwortConfirm) {
                     socket.on('connect', function (data) {
-                        socket.emit('regis', $scope.data);
+
                     });
+                    socket.emit('regis', $scope.data);
                     socket.on('dataOk', function (data) {
-                        if(data){
+                        if (data) {
                             alert("Registration erfolgreich")
-                        }else {
+                        } else {
                             alert("Registration fehlgeschlagen");
                         }
                     })
