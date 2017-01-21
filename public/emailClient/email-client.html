@@ -3,11 +3,32 @@
         <div class="col-md-1"> </div>
         <div class="mailLinks">
             <button class="btn btn-primary btnComp">COMPOSE</button>
-            <div ng-repeat="test in tableLeftData">
+            <div ng-repeat="test in tableLeftData" id="mailInput">
                 {{test}}
+            </div>
+            <div class="label">
+                <div class="labelTitle">
+                </div>
             </div>
         </div>
         <div class="mailBody">
+            <div class="mailheader">
+                <label class="checkbox-inline custom-checkbox nowrap">
+                    <input type="checkbox" id="inlineCheckbox01" value="option1">
+                 <span class="select-all-label">Select All</span>
+                 </label>
+                <button type="button" class="btn btn-icon refresh-button glyphicon glyphicon-repeat"></button>
+                <div class="btn-group dropdown" uib-dropdown="">
+                    <button type="button" class="btn more-button dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></button>
+                    <ul uib-dropdown-menu="" class="dropdown-menu">
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -73,5 +94,95 @@
         border: 2px solid #fff;
         background-color: transparent;
         margin: 15px 0;
+    }
+    
+    #mailInput {
+        cursor: pointer;
+        font-weight: 300;
+        font-size: 16px;
+        text-align: left;
+        padding: 10px 10px 10px 30px;
+        margin-left: 0;
+        -webkit-transition: .8s padding ease;
+        transition: .8s padding ease;
+        color: white;
+    }
+    
+    #mailInput:hover {
+        background-color: rgba(0, 0, 0, .3);
+    }
+    
+    .label {
+        margin-top: 14px;
+    }
+    
+    .labelTitle {
+        padding-left: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, .12);
+    }
+    
+    .mailheader {
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        padding: 24px;
+        color: white;
+    }
+    
+    .mailBody {
+        padding: 0;
+        color: white;
+    }
+    
+    label.custom-checkbox,
+    label.custom-radio {
+            padding-right: 21px;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    
+    .nowrap {
+        white-space: nowrap;
+    }
+    
+    .checkbox-inline,
+    .radio-inline {
+        position: relative;
+        display: inline-block;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: 400;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    
+    .select-all-label {
+        color: white;
+    }
+    
+    .refresh-button {
+        background-color: transparent;
+        width: auto;
+    }
+    
+    .refresh-button:hover {
+        color: #fff;
+        background-color: transparent;
+        opacity: .8;
+        box-shadow: none;
+    }
+    
+    .refresh-button:focus {
+        border: none!important;
+    }
+
+    
+    .more-button {
+        background-color: transparent;
+        width: auto;
+        color:white;
+        width: 60px;
+        font-size: 14px;
+        padding: 6px 5px;
+        margin-left: -11px!important;
     }
 </style>
